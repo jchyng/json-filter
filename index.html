@@ -21,6 +21,20 @@
       crossorigin="anonymous"
     ></script>
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-5RYGV4MDRQ"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-5RYGV4MDRQ");
+  </script>
   <body>
     <h1>JSON Filter Tool</h1>
     <input type="file" id="fileInput" accept=".json" />
@@ -44,6 +58,7 @@
     <button id="downloadButton" style="display: none">
       Download Filtered JSON
     </button>
+
     <script src="script.js"></script>
   </body>
 </html>
