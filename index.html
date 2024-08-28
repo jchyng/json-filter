@@ -18,10 +18,8 @@
   <body>
     <h1>JSON Filter Tool</h1>
     <input type="file" id="fileInput" accept=".json" />
-
     <h3>Original JSON:</h3>
     <textarea id="jsonContent" readonly></textarea>
-
     <div id="fields">
       <div class="field">
         <input
@@ -31,17 +29,15 @@
         <button onclick="removeField(this)">Remove</button>
       </div>
     </div>
-
     <button onclick="addField()">Add Field</button>
-    <button onclick="filterJSON()">Apply Filter</button>
-
+    <button id="applyFilterButton" onclick="filterJSONData()" disabled>
+      Apply Filter
+    </button>
     <h3>Filtered JSON:</h3>
     <textarea id="filteredJsonContent" readonly></textarea>
-
-    <button id="downloadButton" style="display: none" onclick="downloadJSON()">
+    <button id="downloadButton" style="display: none">
       Download Filtered JSON
     </button>
-
     <script src="script.js"></script>
   </body>
 </html>
