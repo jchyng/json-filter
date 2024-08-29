@@ -32,32 +32,100 @@
       dataLayer.push(arguments);
     }
     gtag("js", new Date());
-
     gtag("config", "G-5RYGV4MDRQ");
   </script>
   <body>
-    <h1>JSON Filter Tool</h1>
-    <input type="file" id="fileInput" accept=".json" />
-    <h3>Original JSON:</h3>
-    <textarea id="jsonContent" readonly></textarea>
-    <div id="fields">
-      <div class="field">
-        <input
-          type="text"
-          placeholder="Enter field (e.g., object.field1.field2)"
-        />
-        <button onclick="removeField(this)">Remove</button>
-      </div>
-    </div>
-    <button onclick="addField()">Add Field</button>
-    <button id="applyFilterButton" onclick="filterJSONData()" disabled>
-      Apply Filter
-    </button>
-    <h3>Filtered JSON:</h3>
-    <textarea id="filteredJsonContent" readonly></textarea>
-    <button id="downloadButton" style="display: none">
-      Download Filtered JSON
-    </button>
+    <header>
+      <h1>JSON Filter Tool</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#how-to-use">How to Use</a></li>
+          <li><a href="#tool">Filter Tool</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="tool-description">
+      <h2>Welcome</h2>
+      <p>
+        Welcome to the JSON Filter Tool! This easy-to-use online tool allows you
+        to upload, filter, and download JSON data directly in your browser.
+        Apply custom filters to manipulate your JSON data effortlessly.
+      </p>
+    </section>
+
+    <main>
+      <section id="about">
+        <h2>About JSON Filter Tool</h2>
+        <p>
+          Our JSON Filter Tool is a powerful and user-friendly web application
+          designed to help you manipulate and extract specific data from JSON
+          files. Whether you're a developer, data analyst, or just someone
+          working with JSON data, this tool simplifies the process of filtering
+          and downloading the information you need.
+        </p>
+      </section>
+
+      <section id="how-to-use">
+        <h2>How to Use This Tool</h2>
+        <ol>
+          <li>Upload your JSON file using the file input above.</li>
+          <li>
+            Your original JSON will appear in the "Original JSON" textarea.
+          </li>
+          <li>
+            Use the "Add Field" button to add filter fields. Specify fields
+            using dot notation:
+            <ul>
+              <li>
+                For simple fields, just enter the field name (e.g., "name")
+              </li>
+              <li>
+                For nested fields, use dots to separate levels (e.g.,
+                "address.city")
+              </li>
+            </ul>
+          </li>
+          <li>
+            Click "Apply Filter" to see the results in the "Filtered JSON"
+            textarea.
+          </li>
+          <li>
+            If you're satisfied with the results, use the "Download Filtered
+            JSON" button to save your filtered data.
+          </li>
+        </ol>
+      </section>
+
+      <section id="tool">
+        <h2>JSON Filter Tool</h2>
+        <input type="file" id="fileInput" accept=".json" />
+        <h3>Original JSON:</h3>
+        <textarea id="jsonContent" readonly></textarea>
+        <div id="fields">
+          <div class="field">
+            <input
+              type="text"
+              placeholder="Enter field (e.g., object.field1.field2)"
+            />
+            <button onclick="removeField(this)">Remove</button>
+          </div>
+        </div>
+        <button onclick="addField()">Add Field</button>
+        <button id="applyFilterButton" onclick="filterJSONData()" disabled>
+          Apply Filter
+        </button>
+        <h3>Filtered JSON:</h3>
+        <textarea id="filteredJsonContent" readonly></textarea>
+        <button id="downloadButton" style="display: none">
+          Download Filtered JSON
+        </button>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 JSON Filter Tool. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
   </body>
